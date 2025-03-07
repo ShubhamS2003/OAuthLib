@@ -8,12 +8,15 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchDashboard = async () => {
             try {
-                const response = await fetch("http://localhost:5000/dashboard", {
+                const response = await fetch("http://localhost:5000/api/dashboard", {
                     method: "GET",
                     credentials: "include",
                 });
 
+                // console.log(response);
+
                 const data = await response.json();
+                // console.log(data);
 
                 if (response.ok) {
                     setMessage(data.message);
@@ -35,11 +38,11 @@ const Dashboard = () => {
 
     const handleLogout = async () => {
         try {
-            await fetch("http://localhost:5000/api/logout", {
+            await fetch("http://localhost:5000/api/oauth/logout", {
                 method: "POST",
                 credentials: "include",
             });
-            navigate("/"); 
+            navigate("/");
         } catch (error) {
             console.error("Logout failed:", error);
         }

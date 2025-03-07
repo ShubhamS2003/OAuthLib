@@ -81,8 +81,9 @@ app.get("/api/getUsers", async (req, res) => {
 
 
 // Protected API endpoint
-app.get("/dashboard", async (req, res) => {
+app.get("/api/dashboard", async (req, res) => {
     const accessToken = await req.cookies.access_token;
+    console.log(accessToken);
     
     if (!accessToken) {
         return res.status(401).json({message: "You are not authorized"});
@@ -92,13 +93,13 @@ app.get("/dashboard", async (req, res) => {
         res.json({message: "Welcome! You are authorized"});
     } catch (error) {
         console.error("User Info Error:", error);
-        res.redirect("/api/oauth/login");
+        // res.redirect("/api/oauth/login");
     }
 });
 
 
 // Logs out the user by clearing cookies
-app.post("/api/logout", (req, res) => {
+app.post("/api/oauth/logout", (req, res) => {
     try {
         res.clearCookie("access_token", { httpOnly: true, secure: true, sameSite: "None" });
         res.clearCookie("refresh_token", { httpOnly: true, secure: true, sameSite: "None" });
