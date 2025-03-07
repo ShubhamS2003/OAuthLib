@@ -3,34 +3,6 @@
 # OAuthLib
 Basic OAuth library that helps you implement OAuth2.0 flow into your application.
 
-Directory structure:
-└── shubhams2003-oauthlib/
-    ├── README.md
-    ├── backend/
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   ├── server.js
-    │   └── library/
-    │       └── oauthClient.js
-    └── frontend/
-        ├── README.md
-        ├── eslint.config.js
-        ├── index.html
-        ├── package-lock.json
-        ├── package.json
-        ├── vite.config.js
-        ├── public/
-        └── src/
-            ├── App.css
-            ├── App.jsx
-            ├── callback.jsx
-            ├── dashboard.jsx
-            ├── index.css
-            ├── login.jsx
-            ├── main.jsx
-            ├── userData.jsx
-            └── assets/
-
 
 ## Run Locally
 
