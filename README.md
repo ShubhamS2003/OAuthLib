@@ -3,7 +3,6 @@
 # OAuthLib
 Basic OAuth library that helps you implement OAuth2.0 flow into your application.
 
-
 Directory structure:
 └── shubhams2003-oauthlib/
     ├── README.md
